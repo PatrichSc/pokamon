@@ -1,56 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8" />
     <title>POKAMON</title>
-    <script src="./JS/POKAMON.js"></script>
     <link rel="stylesheet" href="./style/Style.css" />
   </head>
 
   <body>
-    <h1 class="titulo">JUEGO POKAMON💧🔥🌱🌀</h1>
-
-    <section id="elije-mascota">
-      <h2>elige tu mascota</h2>
-
-      <label for="fireye">fireye 🔥</label>
-      <input type="radio" name="mascota" id="fireye" />
-
-      <label for="waspy">waspy💧</label>
-      <input type="radio" name="mascota" id="waspy" />
-
-      <label for="sapoperro">sapoperro 🌱</label>
-      <input type="radio" name="mascota" id="sapoperro" />
-
-      <label for="airx1">airx1🌀</label>
-      <input type="radio" name="mascota" id="airx1" />
-
-      <button id="boton-mascota">SELECCIONAR</button>
-    </section>
-
-    <section id="ATACA">
-      <h2>elige tu ataque</h2>
-      <p>
-        <spam id="mascota-jugador"></spam> tiene
-        <spam id="vidas-jugador">100</spam>
-        de vida
-      </p>
-      <p>
-        El enemigo <spam id="mascota-enemigo"></spam> tiene
-        <spam id="vidas-enemigo">100</spam>
-        de vida
-      </p>
-      <section id="Botones-Mascotas">
-        <button id="ataque1"></button>
-        <button id="ataque2"></button>
-        <button id="ataque3"></button>
+    <div class="content">
+      <h1 class="titulo">JUEGO POKAMON💧🔥🌱🌀</h1>
+      
+      <section id="elije-mascota">
+        <h2>elige tu mascota</h2>
+        
+        <label for="fireye">fireye 🔥</label>
+        <input type="radio" name="mascota" id="fireye" />
+        
+        <label for="waspy">waspy💧</label>
+        <input type="radio" name="mascota" id="waspy" />
+        
+        <label for="sapoperro">sapoperro 🌱</label>
+        <input type="radio" name="mascota" id="sapoperro" />
+        
+        <label for="airx1">airx1🌀</label>
+        <input type="radio" name="mascota" id="airx1" />
+        
+        <button id="boton-mascota">SELECCIONAR</button>
       </section>
-    </section>
-
-    <section id="mesajes"></section>
-
-    <section id="REICIAR">
-      <button id="boton-reiniciar">REINICIAR</button>
-    </section>
+      
+      <section id="ATACA" class="hidden">
+        <h2>elige tu ataque</h2>
+        <p>
+          <spam id="mascota-jugador"></spam> tiene
+          <spam id="vidas-jugador">100</spam>
+          de vida
+        </p>
+        <p>
+          El enemigo <spam id="mascota-enemigo"></spam> tiene
+          <spam id="vidas-enemigo">100</spam>
+          de vida
+        </p>
+        <section id="Botones-Mascotas">
+          
+        </section>
+      </section>
+      
+      <section id="mesajes"></section>
+      
+      <section id="REICIAR" class="hidden">
+        <button id="boton-reiniciar">REINICIAR</button>
+      </section>
+    </div>
+    <script src="./JS/POKAMON.js"></script>
   </body>
 </html>
