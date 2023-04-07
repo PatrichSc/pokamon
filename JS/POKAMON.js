@@ -5,10 +5,6 @@ let vidasJugador = 100;
 let vidasEnemigo = 100;
 
 function iniciarJuego() {
-  let sectionataques = document.getElementById("ATACA");
-  sectionataques.style.display = "none";
-  let sectionReiniciar = document.getElementById("REICIAR");
-  sectionReiniciar.style.display = "none";
   let BotonMascotaJugador = document.getElementById("boton-mascota");
   BotonMascotaJugador.addEventListener("click", selecceionarMascota);
 
@@ -24,26 +20,20 @@ function selecceionarMascota() {
   let spamMascotaJugador = document.getElementById("mascota-jugador");
   let sectionMascota = document.getElementById("elije-mascota");
   let sectionataques = document.getElementById("ATACA");
-  sectionataques.style.display = "block";
-
   if (InputFireye.checked) {
     spamMascotaJugador.innerHTML = "FIREYE";
-    sectionMascota.style.display = "none";
   } else if (InputWaspy.checked) {
     spamMascotaJugador.innerHTML = "WASPY";
-    sectionMascota.style.display = "none";
   } else if (InputSapoperro.checked) {
     spamMascotaJugador.innerHTML = "SAPOPERRO";
-
-    sectionMascota.style.display = "none";
   } else if (InputAirx1.checked) {
     spamMascotaJugador.innerHTML = "AIRX1";
-
-    sectionMascota.style.display = "none";
   } else {
     alert("alije tu mascota");
-    sectionMascota.style.display = "block";
   }
+
+  sectionataques.classList.remove("hidden");
+  sectionMascota.classList.add("hidden");
 
   MascotaEnemigo();
 }
@@ -66,59 +56,39 @@ function Botones() {
   let InputAirx1 = document.getElementById("airx1");
 
   if (InputFireye.checked) {
-    crearBotonesF();
+    crearBotones("Lluvia De Lava", "Rocas Calientes", "Coletazos");
   } else if (InputWaspy.checked) {
-    crearBotonesW();
+    crearBotones("Lluvia acida", "Maremoto", "Coletazos");
   } else if (InputSapoperro.checked) {
-    crearBotonesS();
+    crearBotones("Lluvia de rocas", "Terremoto", "Coletazos");
   } else if (InputAirx1.checked) {
-    crearBotonesA();
+    crearBotones("Tornado", "Remolino", "Coletazos");
   }
+
+  addBattleListeners();
 }
 
-function crearBotonesF() {
-  let seccionBotones = document.getElementById("Botones-Mascotas");
-  let botones = document.createElement("p");
-  botones.innerHTML =
-    " <button>Luvia De Lava</button> " +
-    " <button>Escupir Fuego</button> " +
-    " <button>Coletazos</button> ";
+function addBattleListeners() {
+  let ataque1 = document.getElementById("ataque1");
+  let ataque2 = document.getElementById("ataque2");
+  let ataque3 = document.getElementById("ataque3");
+
+  ataque1.addEventListener("click", () => {});
+  ataque2.addEventListener("click", () => {});
+  ataque3.addEventListener("click", () => {});
+}
+
+function crearBotones(ataque1, ataque2, ataque3) {
+  const seccionBotones = document.getElementById("Botones-Mascotas");
+  const botones = document.createElement("p");
+  botones.innerHTML = `
+    <button id="ataque1">${ataque1}</button>
+    <button id="ataque2">${ataque2}</button>
+    <button id="ataque3">${ataque3}</button>
+  `;
 
   seccionBotones.appendChild(botones);
 }
-function crearBotonesW() {
-  let seccionBotones = document.getElementById("Botones-Mascotas");
-  let botones = document.createElement("p");
-  botones.innerHTML =
-    " <button>Lluvia acida</button> " +
-    " <button>Maremoto</button> " +
-    " <button>Coletazos</button> ";
-
-  seccionBotones.appendChild(botones);
-}
-
-function crearBotonesS() {
-  let seccionBotones = document.getElementById("Botones-Mascotas");
-  let botones = document.createElement("p");
-  botones.innerHTML =
-    " <button>Lluvia de rocas</button> " +
-    " <button>Terremoto</button> " +
-    " <button>Coletazos</button> ";
-
-  seccionBotones.appendChild(botones);
-}
-function crearBotonesA() {
-  let seccionBotones = document.getElementById("Botones-Mascotas");
-  let botones = document.createElement("p");
-  botones.innerHTML =
-    " <button id = "Ataque1A">Tornado</button> " +
-    " <button id = "Ataque2A">Remolino</button> " +
-    " <button id = "Ataque3A">Coletazos</button> ";
-
-  seccionBotones.appendChild(botones);
-}
-
-
 
 //ataque aletorio FIREYE
 function ataquealeatorioF() {
